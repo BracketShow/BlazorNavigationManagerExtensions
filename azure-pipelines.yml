@@ -1,8 +1,3 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - master
 
@@ -21,9 +16,13 @@ steps:
     arguments: '--configuration $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
+  displayName: 'dotnet pack'
   inputs:
     command: 'pack'
     packagesToPack: 'src/BlazorNavigationManagerExtensions/BlazorNavigationManagerExtensions.csproj'
     nobuild: true
     includesymbols: true
     versioningScheme: 'off'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publishing Build Artifacts'
