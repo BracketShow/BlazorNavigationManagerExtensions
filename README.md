@@ -1,6 +1,10 @@
 # BlazorNavigationManagerExtensions
 Blazor Navigation Manager Extensions is a simple set of extensions for the Navigation Manager
 
+![Build & Test Main](https://github.com/BracketShow/BlazorNavigationManagerExtensions/workflows/Build%20&%20Test%20Master/badge.svg)
+
+![Nuget](https://img.shields.io/nuget/v/bracketshow.blazornavigationmanagerextensions.svg)
+
 ## Installation
 
 You can install the package with the Nuget Package Manager by searching for *BracketShow.BlazorNavigationManagerExtensions*.
@@ -29,7 +33,7 @@ using BlazorNavigationManagerExtensions;
 
 ### NavigateTo With Query String parameters
 ```csharp
-`NavigateTo(this NavigationManager navManager, string uri, IDictionary<string, string> queryString, bool forceLoad = false)`
+NavigateTo(this NavigationManager navManager, string uri, IDictionary<string, string> queryString, bool forceLoad = false)
 ```
 
 This extension simply allows to navigate to a page with query string parameters. The KeyValuePair will be made of the name of the query string parameter and its value.
