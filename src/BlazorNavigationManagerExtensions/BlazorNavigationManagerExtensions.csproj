@@ -1,7 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>BracketShow.BlazorNavigationManagerExtensions</PackageId>
@@ -16,6 +17,10 @@
     <RepositoryUrl>https://github.com/BracketShow/BlazorNavigationManagerExtensions</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Bracket Show Blazor Navigation Manager Extensions</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>
