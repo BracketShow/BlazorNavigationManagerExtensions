@@ -1,0 +1,31 @@
+name: Build & Test Pull Requests
+
+on:
+  pull_request:
+    branches: [ master ]
+
+env:
+    PROJECT_NAME: BlazorNavigationManagerExtensions
+    NETCORE_VERSION: '3.1.301'
+
+jobs:
+  build:
+    name: Build and test pull request
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup .NET Core ${{ env.NETCORE_VERSION }}
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ env.NETCORE_VERSION }}
+
+    - name: Restore
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build -c Release --no-restore src/$PROJECT_NAME/$PROJECT_NAME.csproj
+
+    - name: Tests
+      run: dotnet test --no-restore --verbosity normal
