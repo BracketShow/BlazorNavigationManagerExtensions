@@ -30,7 +30,8 @@ namespace BlazorNavigationManagerExtensions
         [Fact]
         public void NavigateTo_QueryParams_ShouldAddMultipleQueryParametersToTheUri()
         {
-            var queryParams = new Dictionary<string, string> {
+            var queryParams = new Dictionary<string, string>
+            {
                 { "first", "firstValue" },
                 { "second", "secondValue" }
             };

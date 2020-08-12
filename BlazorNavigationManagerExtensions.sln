@@ -7,12 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorNavigationManagerExte
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BCE4DB7F-A95F-4ABF-A016-60B93F3EC449}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 		azure-pipelines.yml = azure-pipelines.yml
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorNavigationManagerExtensions.Tests", "tests\BlazorNavigationManagerExtensions.Tests\BlazorNavigationManagerExtensions.Tests.csproj", "{002B5B6F-1D2C-44E5-B4A2-C9292309688A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorNavigationManagerExtensions.Tests", "tests\BlazorNavigationManagerExtensions.Tests\BlazorNavigationManagerExtensions.Tests.csproj", "{002B5B6F-1D2C-44E5-B4A2-C9292309688A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

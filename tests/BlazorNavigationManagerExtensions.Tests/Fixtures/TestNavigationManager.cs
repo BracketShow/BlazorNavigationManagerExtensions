@@ -1,19 +1,20 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using System;
+using Microsoft.AspNetCore.Components;
 
 namespace BlazorNavigationManagerExtensions.Fixtures
 {
     public class TestNavigationManager : NavigationManager
     {
-        public TestNavigationManager(string baseUri, string uri)
+        public TestNavigationManager(Uri baseUri, Uri uri)
         {
-            Initialize(baseUri, uri);
+            Initialize(baseUri.ToString(), uri.ToString());
         }
 
-        public string NavigatedUri { get; set; } = default!;
+        public Uri NavigatedUri { get; private set; } = default!;
 
         protected override void NavigateToCore(string uri, bool forceLoad)
         {
-            NavigatedUri = uri;
+            NavigatedUri = new Uri(uri);
         }
     }
 }
