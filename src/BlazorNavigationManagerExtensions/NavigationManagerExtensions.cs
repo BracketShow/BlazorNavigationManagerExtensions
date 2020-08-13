@@ -4,7 +4,9 @@ using System.Collections.Generic;
 
 namespace BlazorNavigationManagerExtensions
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public static class NavigationManagerExtensions
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
         /// <summary>
         /// Navigates to the specified URI with the given query string parameters.
