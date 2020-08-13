@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace BlazorNavigationManagerExtensions.Fixtures
+﻿namespace BlazorNavigationManagerExtensions.Fixtures
 {
     // ReSharper disable once ClassNeverInstantiated.Global
     public class TestNavigationManagerFixture
@@ -10,9 +8,9 @@ namespace BlazorNavigationManagerExtensions.Fixtures
             NavigationManager = new TestNavigationManager(BaseUri, Uri);
         }
 
-        public static Uri BaseUri => new Uri("https://localhost/");
+        public static string BaseUri => "https://localhost/";
 
-        public static Uri Uri => new Uri($"{BaseUri}/page");
+        public static string Uri => $"{BaseUri}/page";
 
         public TestNavigationManager NavigationManager { get; }
     }
