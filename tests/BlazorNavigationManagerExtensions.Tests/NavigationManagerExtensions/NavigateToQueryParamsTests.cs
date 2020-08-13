@@ -1,17 +1,17 @@
+﻿using System.Collections.Generic;
 using BlazorNavigationManagerExtensions.Fixtures;
 using FluentAssertions;
-using System.Collections.Generic;
 using Xunit;
 
-namespace BlazorNavigationManagerExtensions
+namespace BlazorNavigationManagerExtensions.NavigationManagerExtensions
 {
-    public class BlazorNavigationManagerExtensionsTests : IClassFixture<TestNavigationManagerFixture>
+    public class NavigateToQueryParamsTests : IClassFixture<TestNavigationManagerFixture>
     {
         private readonly string uri;
 
         private readonly TestNavigationManager navigationManager;
 
-        public BlazorNavigationManagerExtensionsTests(TestNavigationManagerFixture navigationManagerFixture)
+        public NavigateToQueryParamsTests(TestNavigationManagerFixture navigationManagerFixture)
         {
             uri = "newPage";
 
@@ -19,7 +19,7 @@ namespace BlazorNavigationManagerExtensions
         }
 
         [Fact]
-        public void NavigateTo_QueryParams_ShouldAddASingleQueryParameterToTheUri()
+        public void NavigateToString_QueryParams_ShouldAddASingleQueryParameterToTheUri()
         {
             var queryParams = new Dictionary<string, string> { { "param", "value" } };
             navigationManager.NavigateTo(uri, queryParams);
@@ -28,7 +28,7 @@ namespace BlazorNavigationManagerExtensions
         }
 
         [Fact]
-        public void NavigateTo_QueryParams_ShouldAddMultipleQueryParametersToTheUri()
+        public void NavigateToString_QueryParams_ShouldAddMultipleQueryParametersToTheUri()
         {
             var queryParams = new Dictionary<string, string>
             {
@@ -42,7 +42,7 @@ namespace BlazorNavigationManagerExtensions
         }
 
         [Fact]
-        public void NavigateTo_QueryParams_ShouldNavigateEvenIfEmptyQueryParametersWereProvided()
+        public void NavigateToString_QueryParams_ShouldNavigateEvenIfEmptyQueryParametersWereProvided()
         {
             var queryParams = new Dictionary<string, string>();
 
