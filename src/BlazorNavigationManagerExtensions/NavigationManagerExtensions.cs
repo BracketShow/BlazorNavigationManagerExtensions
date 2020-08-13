@@ -18,5 +18,14 @@ namespace BlazorNavigationManagerExtensions
         {
             navManager.NavigateTo(QueryHelpers.AddQueryString(uri, queryString), forceLoad);
         }
+
+        /// <summary>
+        /// Reloads the application to the current URI.
+        /// </summary>
+        /// <param name="navManager">The NavigationManager instance.</param>
+        public static void Reload(this NavigationManager navManager)
+        {
+            navManager.NavigateTo(navManager.Uri, true);
+        }
     }
 }
