@@ -37,3 +37,10 @@ NavigateTo(this NavigationManager navManager, string uri, IDictionary<string, st
 ```
 
 This extension simply allows to navigate to a page with query string parameters. The KeyValuePair will be made of the name of the query string parameter and its value.
+
+### Reload
+```csharp
+Reload(this NavigationManager navManager)
+```
+
+This extension reloads the application to the current URI by using the `forceLoad` flag to force the page to reload from the server.
