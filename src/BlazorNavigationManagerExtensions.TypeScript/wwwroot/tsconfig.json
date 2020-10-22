@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "lib": [ "es6", "DOM" ],
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es5",
+    "composite": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
