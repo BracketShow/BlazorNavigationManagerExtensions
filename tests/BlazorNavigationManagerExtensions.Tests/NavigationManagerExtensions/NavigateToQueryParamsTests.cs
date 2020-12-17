@@ -28,6 +28,15 @@ namespace BlazorNavigationManagerExtensions.NavigationManagerExtensions
         }
 
         [Fact]
+        public void NavigateToString_QueryParams_ShouldHandleSpecialCharacters()
+        {
+            var queryParams = new Dictionary<string, string> { { "param", "v@l?&" } };
+            navigationManager.NavigateTo(uri, queryParams);
+
+            navigationManager.NavigatedUri.Should().Be($"{uri}?param=v@l%3F%26");
+        }
+
+        [Fact]
         public void NavigateToString_QueryParams_ShouldAddMultipleQueryParametersToTheUri()
         {
             var queryParams = new Dictionary<string, string>
